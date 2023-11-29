@@ -43,6 +43,8 @@ interface HomeRepository {
         matched: Boolean
     ): Flow<Resource<Any>>
 
+    fun sendPushNotificationToLikedUser(crushUserId: String)
+
     suspend fun getAllLikedBy(currentUserId: String): Flow<Resource<List<Likes>>>
 
     suspend fun saveMatchToCurrentUser(

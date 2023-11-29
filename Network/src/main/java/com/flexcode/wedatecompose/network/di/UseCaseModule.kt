@@ -38,6 +38,7 @@ import com.flexcode.wedatecompose.network.domain.use_cases.home.DeleteLikedByFro
 import com.flexcode.wedatecompose.network.domain.use_cases.home.GetAllLikedByUseCase
 import com.flexcode.wedatecompose.network.domain.use_cases.home.GetAllUsersUseCase
 import com.flexcode.wedatecompose.network.domain.use_cases.home.HomeUseCases
+import com.flexcode.wedatecompose.network.domain.use_cases.home.PushNotificationUseCase
 import com.flexcode.wedatecompose.network.domain.use_cases.home.SaveLikeUseCase
 import com.flexcode.wedatecompose.network.domain.use_cases.home.SaveMatchToCurrentUserUseCase
 import com.flexcode.wedatecompose.network.domain.use_cases.home.SaveMatchUseCase
@@ -86,6 +87,7 @@ object UseCaseModule {
             getAllLikedByUseCase = GetAllLikedByUseCase(repository = repository),
             saveMatchUseCase = SaveMatchUseCase(repository = repository),
             saveMatchToCurrentUserUseCase = SaveMatchToCurrentUserUseCase(repository = repository),
+            pushNotificationUseCase = PushNotificationUseCase(repository = repository),
             updateUserAgeUseCase = UpdateUserAgeUseCase(repository = repository),
             deleteLikedByFromUseCase = DeleteLikedByFromUseCase(homeRepository = repository)
         )
