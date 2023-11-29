@@ -51,6 +51,7 @@ abstract class RepositoryModule {
     abstract fun providesSaveChatsRepository(impl: SaveChatRepositoryImpl): SaveChatRepository
 
     @Binds
-    abstract fun providesEditProfileRepository(impl: EditProfileRepositoryImpl):
-        EditProfileRepository
+    abstract fun providesEditProfileRepository(
+        impl: EditProfileRepositoryImpl
+    ): EditProfileRepository
 }

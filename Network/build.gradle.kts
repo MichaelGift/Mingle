@@ -12,10 +12,10 @@ apply {
 
 android {
     namespace = "com.flexcode.wedatecompose.network"
-    compileSdk = com.flexcode.wedate.buildsrc.SDK.max
+    compileSdk = libs.versions.max.sdk.get().toInt()
 
     defaultConfig {
-        minSdk = com.flexcode.wedate.buildsrc.SDK.min
+        minSdk = libs.versions.min.sdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

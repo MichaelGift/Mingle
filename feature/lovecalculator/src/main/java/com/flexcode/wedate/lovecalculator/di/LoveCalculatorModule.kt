@@ -37,10 +37,9 @@ object LoveCalculatorModule {
 
     @Provides
     @Singleton
-    fun providesLoggingInterceptor(): HttpLoggingInterceptor =
-        HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
+    fun providesLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
+        level = HttpLoggingInterceptor.Level.BODY
+    }
 
     @Provides
     @Singleton
@@ -52,25 +51,21 @@ object LoveCalculatorModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(client: OkHttpClient): Retrofit =
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+    fun provideRetrofit(client: OkHttpClient): Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .client(client)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): CalculatorApiService =
-        retrofit.create()
+    fun provideApiService(retrofit: Retrofit): CalculatorApiService = retrofit.create()
 
     const val BASE_URL = "https://love-calculator.p.rapidapi.com/"
 
     @Singleton
     @Provides
-    fun providesCalculatorUseCase(
-        calculatorRepository: CalculatorRepository
-    ): CalculatorUseCases {
+    fun providesCalculatorUseCase(calculatorRepository: CalculatorRepository): CalculatorUseCases {
         return CalculatorUseCases(calculatorRepository)
     }
 }

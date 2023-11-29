@@ -95,10 +95,7 @@ fun ExtraScreenText(
 }
 
 @Composable
-fun ScreenTitlesText(
-    @StringRes text: Int,
-    modifier: Modifier = Modifier
-) {
+fun ScreenTitlesText(@StringRes text: Int, modifier: Modifier = Modifier) {
     Text(
         text = stringResource(text),
         fontSize = 30.sp,

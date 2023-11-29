@@ -67,10 +67,7 @@ fun SliderView(pagerState: PagerState, imageList: MutableList<String>) {
 }
 
 @Composable
-fun DotsIndicator(
-    totalDots: Int,
-    selectedIndex: Int
-) {
+fun DotsIndicator(totalDots: Int, selectedIndex: Int) {
     Row(
         modifier = Modifier
             .fillMaxWidth()

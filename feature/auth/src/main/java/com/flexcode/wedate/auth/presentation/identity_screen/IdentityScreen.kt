@@ -105,10 +105,7 @@ fun IdentityScreen(
 }
 
 @Composable
-fun GenderSelector(
-    onSearchOptionClick: (String) -> Unit,
-    isSelected: (String) -> Boolean
-) {
+fun GenderSelector(onSearchOptionClick: (String) -> Unit, isSelected: (String) -> Boolean) {
     GenderOptionsComponent(
         options = genderOptions,
         onClick = onSearchOptionClick,

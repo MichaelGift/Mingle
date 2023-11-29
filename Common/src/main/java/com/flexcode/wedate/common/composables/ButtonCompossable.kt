@@ -45,12 +45,7 @@ fun BasicButton(
 }
 
 @Composable
-fun BasicTextButton(
-    @StringRes text: Int,
-    modifier: Modifier,
-    color: Color,
-    action: () -> Unit
-) {
+fun BasicTextButton(@StringRes text: Int, modifier: Modifier, color: Color, action: () -> Unit) {
     TextButton(
         onClick = action,
         modifier = modifier,

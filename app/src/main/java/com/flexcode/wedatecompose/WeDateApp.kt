@@ -97,8 +97,8 @@ fun NavGraphBuilder.WeDateNavGraph(appState: WeDateAppState) {
         LoginScreen(openAndPopUp = { route, popup ->
             appState.navigateAndPopUp(route = route, popUp = popup)
         }, openScreen = { route ->
-            appState.navigate(route = route)
-        })
+                appState.navigate(route = route)
+            })
     }
 
     composable(route = FORGOT_PASSWORD_SCREEN) {
@@ -111,8 +111,8 @@ fun NavGraphBuilder.WeDateNavGraph(appState: WeDateAppState) {
         RegisterScreen(openAndPopUp = { route, popUp ->
             appState.navigateAndPopUp(route = route, popUp = popUp)
         }, openScreen = { route ->
-            appState.navigate(route = route)
-        })
+                appState.navigate(route = route)
+            })
     }
 
     composable(route = IDENTITY_SCREEN) {
@@ -128,7 +128,7 @@ fun NavGraphBuilder.WeDateNavGraph(appState: WeDateAppState) {
     composable(route = SEARCHING_FOR_SCREEN) {
         SearchingForScreen(
             openAndPopUp = {
-                route, popup ->
+                    route, popup ->
                 appState.navigateAndPopUp(route, popup)
             }
         )
@@ -152,16 +152,15 @@ fun rememberAppState(
     snackbarManager: SnackBarManager = SnackBarManager,
     resources: Resources = resources(),
     coroutineScope: CoroutineScope = rememberCoroutineScope()
-) =
-    remember(scaffoldState, navController, snackbarManager, resources, coroutineScope) {
-        WeDateAppState(
-            scaffoldState,
-            navController,
-            snackbarManager,
-            resources,
-            coroutineScope
-        )
-    }
+) = remember(scaffoldState, navController, snackbarManager, resources, coroutineScope) {
+    WeDateAppState(
+        scaffoldState,
+        navController,
+        snackbarManager,
+        resources,
+        coroutineScope
+    )
+}
 
 @Composable
 @ReadOnlyComposable

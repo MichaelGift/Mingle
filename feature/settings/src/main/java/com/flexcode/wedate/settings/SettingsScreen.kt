@@ -270,11 +270,7 @@ fun SettingsScreen(
 }
 
 @Composable
-fun InfoColumn(
-    @StringRes text1: Int,
-    text2: String,
-    modifier: Modifier = Modifier
-) {
+fun InfoColumn(@StringRes text1: Int, text2: String, modifier: Modifier = Modifier) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = modifier

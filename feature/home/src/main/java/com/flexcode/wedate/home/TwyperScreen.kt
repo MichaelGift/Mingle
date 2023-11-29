@@ -313,11 +313,7 @@ fun onLikePerson(
 }
 
 @Composable
-fun StatusItem(
-    modifier: Modifier = Modifier,
-    status: Int,
-    backgroundColor: Color
-) {
+fun StatusItem(modifier: Modifier = Modifier, status: Int, backgroundColor: Color) {
     Card(
         modifier = modifier
             .width(100.dp)

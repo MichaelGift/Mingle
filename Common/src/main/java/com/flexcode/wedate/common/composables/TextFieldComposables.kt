@@ -164,8 +164,11 @@ private fun PasswordField(
     var isVisible by remember { mutableStateOf(false) }
 
     val icon =
-        if (isVisible) painterResource(AppIcon.ic_visibility_on)
-        else painterResource(AppIcon.ic_visibility_off)
+        if (isVisible) {
+            painterResource(AppIcon.ic_visibility_on)
+        } else {
+            painterResource(AppIcon.ic_visibility_off)
+        }
 
     val visualTransformation =
         if (isVisible) VisualTransformation.None else PasswordVisualTransformation()

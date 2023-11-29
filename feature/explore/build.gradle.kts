@@ -1,5 +1,3 @@
-import com.flexcode.wedate.buildsrc.SDK
-
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidLibrary)
@@ -13,11 +11,11 @@ apply {
 
 android {
     namespace = "com.flexcode.wedatecompose.explore"
-    compileSdk = SDK.max
+    compileSdk = libs.versions.max.sdk.get().toInt()
 
     defaultConfig {
-        minSdk = SDK.min
-        targetSdk = SDK.max
+        minSdk = libs.versions.min.sdk.get().toInt()
+        targetSdk = libs.versions.max.sdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

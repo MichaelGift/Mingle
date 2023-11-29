@@ -95,10 +95,14 @@ fun MapsScreen(
                         if (lat != 0.0 && longitude != 0.0) {
                             val name = if (i.firstName != state.userDetails?.firstName) {
                                 "Liked by ${i.firstName}"
-                            } else "Your Location"
+                            } else {
+                                "Your Location"
+                            }
                             val title = if (i.firstName != state.userDetails?.firstName) {
                                 i.firstName
-                            } else "You"
+                            } else {
+                                "You"
+                            }
                             Marker(
                                 state = MarkerState(position = latlng),
                                 title = title,

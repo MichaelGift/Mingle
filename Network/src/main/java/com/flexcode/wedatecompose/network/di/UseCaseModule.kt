@@ -77,9 +77,7 @@ object UseCaseModule {
 
     @Provides
     @Singleton
-    fun providesHomeUseCaseContainer(
-        repository: HomeRepository
-    ): HomeUseCases {
+    fun providesHomeUseCaseContainer(repository: HomeRepository): HomeUseCases {
         return HomeUseCases(
             updateUserProfileInfoUseCase = UpdateUserProfileInfoUseCase(repository = repository),
             getAllUsersUseCase = GetAllUsersUseCase(repository = repository),
@@ -105,9 +103,7 @@ object UseCaseModule {
 
     @Provides
     @Singleton
-    fun providesMatchesUseCaseContainer(
-        repository: MatchesRepository
-    ): MatchesUseCaseContainer {
+    fun providesMatchesUseCaseContainer(repository: MatchesRepository): MatchesUseCaseContainer {
         return MatchesUseCaseContainer(
             getAllUserMatchesUseCase = GetAllUserMatchesUseCase(repository = repository),
             getChatProfilesUseCase = GetChatProfilesUseCase(repository = repository)
@@ -116,9 +112,7 @@ object UseCaseModule {
 
     @Provides
     @Singleton
-    fun providesChatsUseCaseContainer(
-        repository: SaveChatRepository
-    ): ChatsUseCaseContainer {
+    fun providesChatsUseCaseContainer(repository: SaveChatRepository): ChatsUseCaseContainer {
         return ChatsUseCaseContainer(
             saveChatToCurrentUserUseCase = SaveChatToCurrentUserUseCase(repository = repository),
             saveChatToMatchUseCase = SaveChatToMatchUseCase(repository = repository),

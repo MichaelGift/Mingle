@@ -224,11 +224,7 @@ fun EditProfileScreen(
 }
 
 @Composable
-fun ClickableImageCard(
-    clicked: String,
-    viewModel: ProfileImagesViewModel,
-    imageUrl: String
-) {
+fun ClickableImageCard(clicked: String, viewModel: ProfileImagesViewModel, imageUrl: String) {
     var imageUri by remember {
         mutableStateOf<Uri?>(null)
     }

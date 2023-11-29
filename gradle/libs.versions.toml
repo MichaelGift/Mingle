@@ -23,6 +23,10 @@ androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 shimmer = "0.5.0"
 
+###min max sdks
+min_sdk = "21"
+max_sdk = "33"
+
 [libraries]
 app-update = { module = "com.google.android.play:app-update", version.ref = "appUpdate" }
 app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdate" }

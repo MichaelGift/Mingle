@@ -75,10 +75,7 @@ fun InterestsScreen(
 }
 
 @Composable
-fun InterestsSelector(
-    onSearchOptionClick: (String) -> Unit,
-    isSelected: (String) -> Boolean
-) {
+fun InterestsSelector(onSearchOptionClick: (String) -> Unit, isSelected: (String) -> Boolean) {
     GenderOptionsComponent(
         options = genderOptions,
         onClick = onSearchOptionClick,

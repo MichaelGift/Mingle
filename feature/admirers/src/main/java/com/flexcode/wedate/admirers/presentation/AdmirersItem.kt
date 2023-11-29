@@ -44,11 +44,7 @@ import com.flexcode.wedatecompose.network.data.models.home.Likes
 import timber.log.Timber
 
 @Composable
-fun AdmirerItem(
-    like: Likes,
-    modifier: Modifier,
-    viewModel: AdmirersViewModel
-) {
+fun AdmirerItem(like: Likes, modifier: Modifier, viewModel: AdmirersViewModel) {
     val state by viewModel.state
     val context = LocalContext.current
     Column {

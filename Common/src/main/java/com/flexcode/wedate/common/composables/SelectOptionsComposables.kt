@@ -33,11 +33,7 @@ import androidx.compose.ui.unit.dp
 import com.flexcode.wedate.common.theme.lightPurple
 
 @Composable
-fun SelectOption(
-    option: String,
-    onClick: (String) -> Unit,
-    isSelected: (String) -> Boolean
-) {
+fun SelectOption(option: String, onClick: (String) -> Unit, isSelected: (String) -> Boolean) {
     Card(
         Modifier
             .wrapContentHeight()

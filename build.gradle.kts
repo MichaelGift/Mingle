@@ -15,7 +15,7 @@ plugins {
     id("com.android.application") version "7.4.0" apply false
     id("com.android.library") version "7.4.0" apply false
     id("org.jetbrains.kotlin.android") version "1.8.0" apply false
-    id("org.jlleitschuh.gradle.ktlint") version ("11.0.0")
+    id("org.jlleitschuh.gradle.ktlint") version ("11.5.1")
     id("com.diffplug.spotless") version ("5.17.1")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version ("2.0.0") apply false
 }
@@ -51,7 +51,16 @@ subprojects {
         outputColorName.set("RED")
         ignoreFailures.set(false)
         enableExperimentalRules.set(true)
-        disabledRules.set(setOf("no-wildcard-imports", "filename", "experimental:package-name"))
+        disabledRules.set(
+            setOf(
+                "no-wildcard-imports",
+                "filename",
+                "experimental:package-name",
+                "experimental:comment-wrapping",
+                "package-name",
+                "experimental:kdoc-wrapping"
+            )
+        )
         reporters {
             reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.PLAIN)
             reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)

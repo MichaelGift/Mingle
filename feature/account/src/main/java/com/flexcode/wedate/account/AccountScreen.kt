@@ -177,10 +177,7 @@ fun AccountScreen(
 }
 
 @Composable
-fun SubscriptionsCard(
-    text: Int,
-    icon: Int
-) {
+fun SubscriptionsCard(text: Int, icon: Int) {
     Card(
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier
@@ -208,11 +205,7 @@ fun SubscriptionsCard(
 }
 
 @Composable
-fun UserInfoItemComposable(
-    modifier: Modifier = Modifier,
-    text: String,
-    icon: Int
-) {
+fun UserInfoItemComposable(modifier: Modifier = Modifier, text: String, icon: Int) {
     Column(
         modifier = modifier.size(150.dp)
     ) {
@@ -232,10 +225,7 @@ fun UserInfoItemComposable(
 }
 
 @Composable
-fun ProfileImage(
-    state: AccountState,
-    navigateToProfileDetails: () -> Unit
-) {
+fun ProfileImage(state: AccountState, navigateToProfileDetails: () -> Unit) {
     Box(
         modifier = Modifier.size(115.dp)
     ) {

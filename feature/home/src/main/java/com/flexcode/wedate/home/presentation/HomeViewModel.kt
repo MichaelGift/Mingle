@@ -86,8 +86,11 @@ class HomeViewModel @Inject constructor(
             if (addresses != null && addresses.size > 0) {
                 val address: Address = addresses[0]
                 locationName = (
-                    if (address.locality != null) address.locality
-                    else address.countryName
+                    if (address.locality != null) {
+                        address.locality
+                    } else {
+                        address.countryName
+                    }
                     ).toString()
 
                 if (locationName != "") {
@@ -106,11 +109,7 @@ class HomeViewModel @Inject constructor(
         return locationName
     }
 
-    private fun updateUserLocation(
-        locationName: String,
-        latitude: String,
-        longitude: String
-    ) {
+    private fun updateUserLocation(locationName: String, latitude: String, longitude: String) {
         viewModelScope.launch {
             homeUseCases.updateUserProfileInfoUseCase.invoke(
                 latitude = latitude,

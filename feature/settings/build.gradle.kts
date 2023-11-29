@@ -1,5 +1,3 @@
-import com.flexcode.wedate.buildsrc.SDK
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -13,11 +11,11 @@ apply {
 
 android {
     namespace = "com.flexcode.wedate.settings"
-    compileSdk = SDK.max
+    compileSdk = libs.versions.max.sdk.get().toInt()
 
     defaultConfig {
-        minSdk = SDK.min
-        targetSdk = SDK.max
+        minSdk = libs.versions.min.sdk.get().toInt()
+        targetSdk = libs.versions.max.sdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

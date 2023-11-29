@@ -90,10 +90,7 @@ fun SearchingForScreen(
 }
 
 @Composable
-fun SearchingForSelector(
-    onSearchOptionClick: (String) -> Unit,
-    isSelected: (String) -> Boolean
-) {
+fun SearchingForSelector(onSearchOptionClick: (String) -> Unit, isSelected: (String) -> Boolean) {
     SearchOptionsComponent(
         options = searchOptions,
         onClick = onSearchOptionClick,

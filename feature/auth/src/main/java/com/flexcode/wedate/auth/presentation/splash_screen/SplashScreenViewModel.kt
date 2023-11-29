@@ -67,8 +67,11 @@ class SplashScreenViewModel @Inject constructor(
 
     fun onAppStart(openAndPopUp: (String, String) -> Unit) {
         showError.value = false
-        if (authRepository.hasUser) openAndPopUp(LOGIN_SCREEN, SPLASH_SCREEN)
-        else openAndPopUp(LOGIN_SCREEN, SPLASH_SCREEN)
+        if (authRepository.hasUser) {
+            openAndPopUp(LOGIN_SCREEN, SPLASH_SCREEN)
+        } else {
+            openAndPopUp(LOGIN_SCREEN, SPLASH_SCREEN)
+        }
     }
 
     fun hasUser(): Boolean {

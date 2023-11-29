@@ -53,10 +53,7 @@ import com.google.accompanist.pager.rememberPagerState
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun BottomSheetContent(
-    modifier: Modifier,
-    person: User?
-) {
+fun BottomSheetContent(modifier: Modifier, person: User?) {
     val context = LocalContext.current
     val scrollState = rememberScrollState()
     val pagerState = rememberPagerState()

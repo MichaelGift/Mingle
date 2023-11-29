@@ -127,10 +127,7 @@ fun MatchesScreen(
 }
 
 @Composable
-fun ChatsComposable(
-    state: MatchesState,
-    navigateToChats: (String) -> Unit
-) {
+fun ChatsComposable(state: MatchesState, navigateToChats: (String) -> Unit) {
     LazyColumn(
         Modifier
             .fillMaxWidth()
@@ -146,10 +143,7 @@ fun ChatsComposable(
 }
 
 @Composable
-fun MatchesComposable(
-    state: MatchesState,
-    navigateToChats: (String) -> Unit
-) {
+fun MatchesComposable(state: MatchesState, navigateToChats: (String) -> Unit) {
     LazyRow(
         Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(start = 6.dp)
@@ -162,9 +156,7 @@ fun MatchesComposable(
 }
 
 @Composable
-fun ErrorMessage(
-    text: Int
-) {
+fun ErrorMessage(text: Int) {
     BasicText(
         text = text,
         fontSize = 15.sp,

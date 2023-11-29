@@ -34,10 +34,7 @@ fun Modifier.basicButton(): Modifier {
     return this.fillMaxWidth().padding(16.dp, 8.dp)
 }
 
-fun Modifier.moveTo(
-    x: Float,
-    y: Float
-) = this.then(
+fun Modifier.moveTo(x: Float, y: Float) = this.then(
     Modifier.layout { measurable, constraints ->
         val placeable = measurable.measure(constraints)
 
@@ -47,9 +44,7 @@ fun Modifier.moveTo(
     }
 )
 
-fun Modifier.visible(
-    visible: Boolean = true
-) = this.then(
+fun Modifier.visible(visible: Boolean = true) = this.then(
     Modifier.layout { measurable, constraints ->
         val placeable = measurable.measure(constraints)
 

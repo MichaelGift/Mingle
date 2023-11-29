@@ -1,5 +1,4 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-import com.flexcode.wedate.buildsrc.SDK
 
 plugins {
     id("com.android.library")
@@ -8,11 +7,11 @@ plugins {
 
 android {
     namespace = "com.flexcode.wedate.common"
-    compileSdk = SDK.max
+    compileSdk = libs.versions.max.sdk.get().toInt()
 
     defaultConfig {
-        minSdk = SDK.min
-        targetSdk = SDK.max
+        minSdk = libs.versions.min.sdk.get().toInt()
+        targetSdk = libs.versions.max.sdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // consumerProguardFiles = "consumer-rules.pro"

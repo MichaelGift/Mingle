@@ -17,14 +17,38 @@ package com.flexcode.wedate.chatsscreen.presentation
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TextField
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.ArrowBackIos
+import androidx.compose.material.icons.filled.Call
+import androidx.compose.material.icons.filled.FileUpload
+import androidx.compose.material.icons.filled.More
+import androidx.compose.material.icons.filled.Send
+import androidx.compose.material.icons.filled.VideoCall
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -192,10 +216,7 @@ fun CustomTextField(
 }
 
 @Composable
-fun CommonIconButton(
-    imageVector: ImageVector,
-    onClick: () -> Unit
-) {
+fun CommonIconButton(imageVector: ImageVector, onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .size(43.dp)
@@ -283,7 +304,9 @@ fun TopBar(modifier: Modifier, navigateToMatchScreen: () -> Unit, state: ChatScr
 @Composable
 fun TopBarIcons(icon: ImageVector) {
     SwipeRightLeftIcon(
-        onClick = { /**TODO*/ },
+        onClick = {
+            /**TODO*/
+        },
         icon = icon,
         contentDesc = "More",
         height = 20.dp,

@@ -1,5 +1,3 @@
-import com.flexcode.wedate.buildsrc.SDK
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -13,12 +11,12 @@ plugins {
 
 android {
     namespace = "com.flexcode.wedatecompose"
-    compileSdk = SDK.max
+    compileSdk = libs.versions.max.sdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.flexcode.wedatecompose"
-        minSdk = SDK.min
-        targetSdk = SDK.max
+        minSdk = libs.versions.min.sdk.get().toInt()
+        targetSdk = libs.versions.max.sdk.get().toInt()
         versionCode = 23
         versionName = "1.0.9"
 

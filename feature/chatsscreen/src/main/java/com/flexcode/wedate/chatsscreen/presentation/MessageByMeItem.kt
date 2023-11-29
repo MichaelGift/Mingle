@@ -31,9 +31,7 @@ import androidx.compose.ui.unit.sp
 import com.flexcode.wedate.common.theme.deepBrown
 
 @Composable
-fun MessageByMeItem(
-    message: String
-) {
+fun MessageByMeItem(message: String) {
     Column(
         modifier = Modifier
             .fillMaxWidth()

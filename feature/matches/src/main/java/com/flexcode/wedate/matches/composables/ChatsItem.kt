@@ -38,10 +38,7 @@ import com.flexcode.wedate.common.extestions.textPadding
 import com.flexcode.wedatecompose.network.data.models.matches.ChatProfile
 
 @Composable
-fun ChatItem(
-    chatProfile: ChatProfile,
-    navigateToChats: (String) -> Unit
-) {
+fun ChatItem(chatProfile: ChatProfile, navigateToChats: (String) -> Unit) {
     Row(
         modifier = Modifier
             .padding(10.dp)

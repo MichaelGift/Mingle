@@ -5,7 +5,6 @@ import com.flexcode.wedatecompose.network.domain.repository.home.HomeRepository
 class PushNotificationUseCase(
     private val repository: HomeRepository
 ) {
-    operator fun invoke(
-        crushUserId: String
-    ) = repository.sendPushNotificationToLikedUser(crushUserId)
+    operator fun invoke(crushUserId: String) =
+        repository.sendPushNotificationToLikedUser(crushUserId)
 }

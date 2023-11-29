@@ -32,10 +32,7 @@ import com.flexcode.wedate.common.ImageShimmer
 import com.flexcode.wedatecompose.network.data.models.matches.Matches
 
 @Composable
-fun MatchesItem(
-    match: Matches,
-    navigateToChats: (String) -> Unit
-) {
+fun MatchesItem(match: Matches, navigateToChats: (String) -> Unit) {
     Card(
         elevation = 5.dp,
         shape = RoundedCornerShape(

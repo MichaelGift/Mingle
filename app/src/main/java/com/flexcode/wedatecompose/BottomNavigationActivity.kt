@@ -143,10 +143,7 @@ fun NavigationGraph(navController: NavHostController) {
 }
 
 @Composable
-fun BottomNavigation(
-    navController: NavController,
-    bottomBarState: MutableState<Boolean>
-) {
+fun BottomNavigation(navController: NavController, bottomBarState: MutableState<Boolean>) {
     val items = listOf(
         BottomNavItem.Explore,
         BottomNavItem.Home,
