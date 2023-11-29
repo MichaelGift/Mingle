@@ -16,6 +16,7 @@
 package com.flexcode.wedatecompose
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -35,10 +36,12 @@ import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.ktx.isFlexibleUpdateAllowed
 import com.google.android.play.core.ktx.isImmediateUpdateAllowed
+import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.time.Duration.Companion.seconds
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -52,12 +55,24 @@ class MainActivity : ComponentActivity() {
         if (updateType == AppUpdateType.FLEXIBLE) {
             appUpdateManager.registerListener(installStateUpdatedListener)
         }
+        setupFirebase()
         checkForUpdates()
         askNotificationPermission()
         setContent {
             WedateComposeTheme {
                 WeDateApp()
             }
+        }
+    }
+
+    private fun setupFirebase() {
+        MyFirebaseMessagingService.sharedPref = getSharedPreferences(
+            "sharedPref",
+            Context.MODE_PRIVATE
+        )
+        FirebaseMessaging.getInstance().token.addOnCompleteListener { result ->
+            MyFirebaseMessagingService.token = result.result
+            Timber.tag("MainActivity").e("Token: " + result.result)
         }
     }
 
