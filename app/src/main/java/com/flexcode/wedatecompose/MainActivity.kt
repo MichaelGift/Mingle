@@ -15,11 +15,16 @@
  */
 package com.flexcode.wedatecompose
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.flexcode.wedate.common.theme.WedateComposeTheme
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -48,6 +53,7 @@ class MainActivity : ComponentActivity() {
             appUpdateManager.registerListener(installStateUpdatedListener)
         }
         checkForUpdates()
+        askNotificationPermission()
         setContent {
             WedateComposeTheme {
                 WeDateApp()
@@ -119,6 +125,38 @@ class MainActivity : ComponentActivity() {
         if (requestCode == 77) {
             if (resultCode != RESULT_OK) {
                 println("Error updating the application")
+            }
+        }
+    }
+
+    // Declare the launcher at the top of your Activity/Fragment:
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted: Boolean ->
+        if (isGranted) {
+            // FCM SDK (and your app) can post notifications.
+        } else {
+            // TODO: Inform user that that your app will not show notifications.
+        }
+    }
+
+    private fun askNotificationPermission() {
+        // This is only necessary for API level >= 33 (TIRAMISU)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) ==
+                PackageManager.PERMISSION_GRANTED
+            ) {
+                // FCM SDK (and your app) can post notifications.
+            } else if (shouldShowRequestPermissionRationale(
+                    Manifest.permission.POST_NOTIFICATIONS
+                )
+            ) {
+            } else {
+                // Directly ask for the permission
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
         }
     }
